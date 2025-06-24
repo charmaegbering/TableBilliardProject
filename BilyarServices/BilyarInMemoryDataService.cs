@@ -17,6 +17,13 @@ namespace BilyaranServices
             {
                 BilyarTables.Add(new BTables(i));
             }
+            var table1 = GetTables(1);
+            table1.BilyarPlayers.Add(new Player("Pillow") { Payment = 50});
+            table1.BilyarPlayers.Add(new Player("Coco") { Payment = 0 });
+
+            var table2 = GetTables(2);
+            table2.BilyarPlayers.Add(new Player("Jasmin") { Payment = 100 });
+            table2.BilyarPlayers.Add(new Player("Rayver") { Payment = 0 });
         }
         public List<BTables> GetAllTables()
         {
