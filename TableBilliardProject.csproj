@@ -10,12 +10,15 @@
   <ItemGroup>
     <Compile Remove="BilyaranBusinessLayer\**" />
     <Compile Remove="BilyaranCommon\**" />
+    <Compile Remove="BilyaranForms\**" />
     <Compile Remove="BilyarServices\**" />
     <EmbeddedResource Remove="BilyaranBusinessLayer\**" />
     <EmbeddedResource Remove="BilyaranCommon\**" />
+    <EmbeddedResource Remove="BilyaranForms\**" />
     <EmbeddedResource Remove="BilyarServices\**" />
     <None Remove="BilyaranBusinessLayer\**" />
     <None Remove="BilyaranCommon\**" />
+    <None Remove="BilyaranForms\**" />
     <None Remove="BilyarServices\**" />
   </ItemGroup>
 

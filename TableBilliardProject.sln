@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableBilliardProject", "TableBilliardProject.csproj", "{5B8C5F28-CBC0-43B5-869A-956BC613DD16}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilyaranCommon", "BilyaranCommon\BilyaranCommon.csproj", "{3FDD1B85-F6C1-4A52-ACA1-F0BB91ECBAA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilyaranServices", "BilyarServices\BilyaranServices.csproj", "{9179A719-A0FC-4270-8EAB-1F0BCB9B190C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsBilliard", "..\FinalBilliardManagement\FormsBilliard\FormsBilliard.csproj", "{0FB5E081-9C90-45B8-977B-8ED06E4A4E0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9179A719-A0FC-4270-8EAB-1F0BCB9B190C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9179A719-A0FC-4270-8EAB-1F0BCB9B190C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9179A719-A0FC-4270-8EAB-1F0BCB9B190C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB5E081-9C90-45B8-977B-8ED06E4A4E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB5E081-9C90-45B8-977B-8ED06E4A4E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB5E081-9C90-45B8-977B-8ED06E4A4E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB5E081-9C90-45B8-977B-8ED06E4A4E0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
