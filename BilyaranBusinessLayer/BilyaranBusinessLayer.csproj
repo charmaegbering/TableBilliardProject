@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BilyaranCommon\BilyaranCommon.csproj" />
     <ProjectReference Include="..\BilyarServices\BilyaranServices.csproj" />
   </ItemGroup>

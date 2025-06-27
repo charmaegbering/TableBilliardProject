@@ -1,0 +1,6 @@
+@BilyarAPI_HostAddress = http://localhost:5142
+
+GET {{BilyarAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

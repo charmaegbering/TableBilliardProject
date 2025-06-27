@@ -16,9 +16,9 @@
             public BilyarLogicService()
             {
                //BilyarData = new BilyarInMemoryDataService();
-               // BilyarData = new BilyarJsonFileDataService();
+               BilyarData = new BilyarJsonFileDataService();
                 //BilyarData = new BilyarTextFileDataService();
-                BilyarData = new BilyaranSQL();
+               //BilyarData = new BilyaranSQL();
 
             }
 
