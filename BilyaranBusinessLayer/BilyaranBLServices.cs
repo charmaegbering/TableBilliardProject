@@ -1,11 +1,13 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
 using BilyaranServices;
 using BilyaranCommon;
 
 namespace BilyaranBusinessLayer
 {
+    
     public class BilyaranBLServices
     {
         private BilyarLogicService bilyaranDL = new BilyarLogicService();
@@ -32,6 +34,16 @@ namespace BilyaranBusinessLayer
         public List<BTables> GetAllTables()
         {
             return bilyaranDL.GetAllTables();
+        }
+
+        public void SendNotification(string to, string subject, string body)
+        {
+            using var client = new SmtpClient("sandbox.smtp.mailtrap.io", 2525)
+            {
+                Credentials = new NetworkCredential("f43b1c8d6c6f74", "722679699e36d5"),
+                EnableSsl = true
+            };
+            client.Send("charmaegbering10@gmail.com", to, subject, body);
         }
     }
 }

@@ -1,39 +1,58 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BilyaranBusinessLayer;
 using BilyaranCommon;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using BilyarAPI.Services;
 
 namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BilliardController : ControllerBase
+    public class BilyarController : ControllerBase
     {
-         BilyaranBusinessLayer.BilyaranBLServices billiardService = new BilyaranBusinessLayer.BilyaranBLServices();
+        private readonly BilyaranBLServices _billiardService;
+        private readonly EmailNotificationService _emailService;
+
+        public BilyarController(BilyaranBLServices billiardService, EmailNotificationService emailService)
+        {
+            _billiardService = billiardService;
+            _emailService = emailService;
+        }
 
         [HttpGet("tables")]
-        public IEnumerable<BTables> GetAllTables()
+        public ActionResult<IEnumerable<BTables>> GetAllTables()
         {
-            return billiardService.GetAllTables();
+            var tables = _billiardService.GetAllTables();
+            return Ok(tables);
         }
 
         [HttpPost("addPlayers")]
-        public ActionResult<bool> AddPlayersToTable(int tableNumber, string playerOne, string playerTwo)
+        public ActionResult<bool> AddPlayersToTable(
+            [FromQuery] int tableNumber,
+            [FromQuery] string playerOne,
+            [FromQuery] string playerTwo)
         {
-            var result = billiardService.AddPlayerToTable(tableNumber, playerOne, playerTwo);
+            var result = _billiardService.AddPlayerToTable(tableNumber, playerOne, playerTwo);
             return Ok(result);
         }
 
         [HttpPatch("removePlayer")]
-        public ActionResult<bool> RemovePlayerFromTable(int tableNumber)
+        public ActionResult<bool> RemovePlayerFromTable([FromQuery] int tableNumber)
         {
-            var result = billiardService.RemovePlayerFromATable(tableNumber);
+            var result = _billiardService.RemovePlayerFromATable(tableNumber);
             return Ok(result);
         }
 
         [HttpPatch("updatePayment")]
-        public ActionResult<bool> UpdatePayment(int tableNumber, string playerName, int payment)
+        public ActionResult<bool> UpdatePayment(
+            [FromQuery] int tableNumber,
+            [FromQuery] string playerName,
+            [FromQuery] int price)
         {
-            var result = billiardService.UpdatePayment(tableNumber, playerName, payment);
+            var result = _billiardService.UpdatePayment(tableNumber, playerName, price);
             return Ok(result);
+        }       
         }
     }
 }

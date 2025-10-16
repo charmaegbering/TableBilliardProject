@@ -21,7 +21,7 @@ namespace BilyaranCommon
     public class BTables
     {
         public int TableNumber { get; set; }
-        public List<Player> BilyarPlayers { get; set; } = new List<Player>();
+        public List<Player> BilyarPlayers { get; set; }
 
         public BTables() { }
         public bool IsOccupied

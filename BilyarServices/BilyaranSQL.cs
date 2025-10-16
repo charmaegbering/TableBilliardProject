@@ -8,7 +8,7 @@ namespace BilyaranServices
 {
     public class BilyaranSQL : IBilyarDataService
     {
-        private string connectionString = "Data Source=DESKTOP-VBQL3K5\\SQLEXPRESS; Initial Catalog=billiards; Integrated Security=True; TrustServerCertificate=True;";
+        private string connectionString = "Data Source=DESKTOP-QR7T0OM\\SQLEXPRESS; Initial Catalog=billiards; Integrated Security=True; TrustServerCertificate=True;";
 
         
         public List<BTables> GetAllTables()

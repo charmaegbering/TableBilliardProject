@@ -30,7 +30,10 @@ namespace TableBilliardProject
                         case OptionEnum.UpdatePrice:
                             UpdatePayment();
                             break;
-                        case OptionEnum.Exit:
+                        case OptionEnum.SendNotification:
+                            SendNotification();
+                            break;
+                                case OptionEnum.Exit:
                             running = false;
                             break;
                         default:
@@ -49,9 +52,10 @@ namespace TableBilliardProject
                 Console.WriteLine("[2] Remove Players from a Table");
                 Console.WriteLine("[3] Display All Tables");
                 Console.WriteLine("[4] Update Payment from a Table");
-                Console.WriteLine("[5] Exit");
+                Console.WriteLine("[5] Send Notification");
+                Console.WriteLine("[6] Exit");
                 Console.WriteLine("=============================");
-                Console.Write("Please Select From [1-5]: ");
+                Console.Write("Please Select From [1-6]: ");
             }
             static void AddPlayers()
             {
@@ -138,6 +142,25 @@ namespace TableBilliardProject
                 else
                     Console.WriteLine("Failed to update payment. Player may not exist on this table.");
             }
+            static void SendNotification()
+            {
+                Console.Write("Enter recipient email: ");
+                string to = Console.ReadLine();
+                Console.Write("Enter subject: ");
+                string subject = Console.ReadLine();
+                Console.Write("Enter message body: ");
+                string body = Console.ReadLine();
+
+                try
+                {
+                    bilyaranBL.SendNotification(to, subject, body);
+                    Console.WriteLine("Notification sent successfully!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Failed to send notification: " + ex.Message);
+                }
+            }
         }
     }
     enum OptionEnum
@@ -146,5 +169,6 @@ namespace TableBilliardProject
         RemovePlayerFromATable,
         DisplayAllTables,
         UpdatePrice,
+        SendNotification, 
         Exit
     }

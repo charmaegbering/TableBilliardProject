@@ -11,18 +11,26 @@
     <Compile Remove="BilyaranBusinessLayer\**" />
     <Compile Remove="BilyaranCommon\**" />
     <Compile Remove="BilyaranForms\**" />
+    <Compile Remove="BilyarAPI\**" />
     <Compile Remove="BilyarServices\**" />
+    <Compile Remove="FormsBilliard\**" />
     <EmbeddedResource Remove="BilyaranBusinessLayer\**" />
     <EmbeddedResource Remove="BilyaranCommon\**" />
     <EmbeddedResource Remove="BilyaranForms\**" />
+    <EmbeddedResource Remove="BilyarAPI\**" />
     <EmbeddedResource Remove="BilyarServices\**" />
+    <EmbeddedResource Remove="FormsBilliard\**" />
     <None Remove="BilyaranBusinessLayer\**" />
     <None Remove="BilyaranCommon\**" />
     <None Remove="BilyaranForms\**" />
+    <None Remove="BilyarAPI\**" />
     <None Remove="BilyarServices\**" />
+    <None Remove="FormsBilliard\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
     <PackageReference Include="System.Resources.Extensions" Version="9.0.6" />
   </ItemGroup>
 
