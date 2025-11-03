@@ -4,14 +4,22 @@ using System.Net;
 using System.Net.Mail;
 using BilyaranServices;
 using BilyaranCommon;
+using Microsoft.Extensions.Options; 
 
 namespace BilyaranBusinessLayer
 {
-    
+
     public class BilyaranBLServices
     {
         private BilyarLogicService bilyaranDL = new BilyarLogicService();
-
+        private readonly SmtpSettings _smtpSettings; 
+        public BilyaranBLServices(IOptions<SmtpSettings> smtpSettings)
+        {
+            _smtpSettings = smtpSettings.Value;
+        }
+        public BilyaranBLServices()
+        {
+        }
         public bool AddPlayerToTable(int tableNumber, string playerOne, string playerTwo)
         {
             var table = bilyaranDL.GetTableByNumber(tableNumber);
@@ -35,15 +43,14 @@ namespace BilyaranBusinessLayer
         {
             return bilyaranDL.GetAllTables();
         }
-
         public void SendNotification(string to, string subject, string body)
         {
-            using var client = new SmtpClient("sandbox.smtp.mailtrap.io", 2525)
+            using var client = new SmtpClient(_smtpSettings.Host, _smtpSettings.Port)
             {
-                Credentials = new NetworkCredential("f43b1c8d6c6f74", "722679699e36d5"),
+                Credentials = new NetworkCredential(_smtpSettings.Username, _smtpSettings.Password),
                 EnableSsl = true
             };
-            client.Send("charmaegbering10@gmail.com", to, subject, body);
+            client.Send(_smtpSettings.FromAddress, to, subject, body);
         }
     }
 }

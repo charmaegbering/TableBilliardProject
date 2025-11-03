@@ -10,13 +10,13 @@
 
   <ItemGroup>
     <Reference Include="BilyaranBusinessLayer">
-      <HintPath>..\..\source\repos\BilliardSystemFinal\bin\Debug\net8.0\BilyaranBusinessLayer.dll</HintPath>
+      <HintPath>..\BilyaranBusinessLayer\bin\Debug\net8.0\BilyaranBusinessLayer.dll</HintPath>
     </Reference>
     <Reference Include="BilyaranCommon">
-      <HintPath>..\..\source\repos\BilliardSystemFinal\bin\Debug\net8.0\BilyaranCommon.dll</HintPath>
+      <HintPath>..\BilyaranBusinessLayer\bin\Debug\net8.0\BilyaranCommon.dll</HintPath>
     </Reference>
     <Reference Include="BilyaranServices">
-      <HintPath>..\..\source\repos\BilliardSystemFinal\bin\Debug\net8.0\BilyaranServices.dll</HintPath>
+      <HintPath>..\BilyaranBusinessLayer\bin\Debug\net8.0\BilyaranServices.dll</HintPath>
     </Reference>
   </ItemGroup>
 
